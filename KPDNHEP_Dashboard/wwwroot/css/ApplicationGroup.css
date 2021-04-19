@@ -1,0 +1,21 @@
+﻿#tabs{
+    border-color:white;
+}
+.card{
+    margin-left:15px;
+}
+
+.connected-sortable {
+    list-style: none;
+    padding: 20px;
+    margin: 0px;
+}
+
+#sortable1 li, #sortable2 li, #sortable3 li, #sortable4 li, #sortable5 li {
+    list-style: none;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+    float: left;
+}

@@ -1,0 +1,307 @@
+/***************
+Header and menu
+***************/
+
+.content-wrapper {
+    background-color: #fff;
+    background: transparent;
+}
+
+.nav {
+    border: none;
+}
+
+.sideBtns {
+    margin: 8% 5%;
+    transition: all .3s;
+    width: 40%;
+}
+
+.sideBtns:hover {
+    transform: scale(1.05);
+}
+
+.skin-purple .wrapper, .skin-purple .main-sidebar, .skin-purple .left-side, .sidebar {
+    background-color: #000;
+}
+
+.skin-purple .main-header .navbar {
+    background-color: #000;
+}
+
+.skin-purple .main-header .logo {
+    background-color: #000;
+    transition: all .3s;
+}
+
+.skin-purple .main-header .logo:hover {
+    box-shadow: inset 18em 0 #535353;
+}
+
+.skin-purple .sidebar-menu > li:hover > a, .skin-purple .sidebar-menu > li.active > a, .skin-purple .sidebar-menu > .menu-open > a {
+    background: #353535;
+}
+
+.skin-purple .sidebar-menu > li.active > a {
+    border-left-color: #424242;
+    margin: 3px 0;
+    transition: box-shadow .3s ease;
+}
+
+.skin-purple .sidebar-menu > li:hover > a {
+    box-shadow: inset 250px 0 #535353;
+}
+
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+    background-color: rgba(0,0,0,.8);
+}
+
+.skin-purple .main-header li.user-header {
+    background-color: transparent;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer {
+    background-color: transparent;
+}
+
+.skin-purple .main-header .user-header {
+    background-color: #424242;
+}
+
+.logoTxtImg {
+    width: 65%;
+}
+
+/* .content-wrapper {
+    min-height: 100vh;
+} */
+
+#dropdownMenuLink {
+    background-color: #424242;
+    display: none;
+    padding-bottom: 14px;
+}
+
+.sidebar-toggle {
+    display:none;
+}
+
+.glyphicon-user {
+    display: none;
+}
+
+/***************
+Forgot password
+***************/
+.btn {
+    color: black;
+    padding: 10px 4%;
+    transition: all .2s;
+}
+
+.btn-primary {
+    background-color: #000;
+    border: 1px solid #424242;
+    color: white;
+    transition: color .2s, background-color .2s;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-default {
+    background-color: transparent;
+    border-color: #424242;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #424242;
+    color: #969696;
+}
+
+/** Profile page **/
+.offsetinput {
+    color: #343434;
+    float: none;
+    margin: 0 auto;
+}
+
+.form-control[disabled] {
+    background-color: #343434;
+}
+
+.form-control[readonly] {
+    background-color: transparent;
+}
+
+.dark {
+    display: none;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active > a, .nav-tabs-custom > .nav-tabs > li.active:hover > a {
+    background-color: transparent;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+    border: none;
+}
+
+.dropdown-menu > li > a {
+    color: #fff;
+}
+
+section {
+    background-color: #fff;
+}
+
+.nav-tabs-custom {
+    box-shadow: none;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .skin-purple .wrapper, .skin-purple .main-sidebar, .skin-purple .left-side {
+        background: linear-gradient(0deg, rgba(41,41,41,1) 0%, rgba(0,0,0,1) 100%);
+    }
+
+    .skin-purple .main-header .logo, .skin-purple .main-header .navbar {
+        background-color: #353535;
+    }
+
+    .skin-purple .main-header .navbar {
+        border-left: 1px solid #000;
+    }
+
+    .nav-tabs-custom, .nav-tabs-custom > .tab-content, .form-control, .tab-label, .nav-tabs-custom > .nav-tabs > li.active > a {
+        background: transparent;
+    }
+
+    .nav-tabs-custom > .nav-tabs > li.active > a {
+        border: none;
+    }
+
+    .skin-purple .main-header .user-header {
+        background-color: #424242;
+    }
+
+    .labelContainer {
+        color: #000;
+    }
+
+    .labelContainer, h2, .btn {
+        color: #fff;
+    }
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    input {
+        color: #000;
+    }
+
+    span {
+        color: #868686;
+    }
+
+    section {
+        background-color: transparent;
+    }
+
+    /**You can apply these classes to anything you want to hide/show in each mode**/
+    .light {
+        display: none;
+    }
+
+    .dark {
+        display: block;
+    }
+    #user_list {
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .link-img{
+        padding: 12%;
+    }
+
+    .row {
+        padding-bottom: 0;
+    }
+
+    .prism-property-label {
+        text-align: center;
+    }
+
+    .skin-purple .main-header .navbar .sidebar-toggle:hover {
+        background-color: #424242;
+    }
+
+    .skin-purple .main-header .navbar .sidebar-toggle {
+        background-color: #424242;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+
+    .logoTxtImg {
+        width: 40%;
+    }
+
+    #oldpassword, #newpassword, #confirmnewpassword {
+        height: 50px;
+        margin: 15px 0;
+    }
+
+    #idb1 {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .navbar-static-top {
+        background-color: transparent;
+        position: relative;
+        top: -50px;
+        z-index: 5;
+    }
+    .navbar-custom-menu, .navbar-nav, .dropdown-toggle {
+        background-color: #424242;
+        width: 42px;
+        padding: 0;
+    }
+
+    .skin-purple .main-header .logo, .skin-purple .main-header .navbar {
+        background-color: rgba(100,100,100, .2);
+    }
+
+    .main-sidebar {
+        padding-top: 50px;
+    }
+
+    .main-header {
+        max-height: 50px;
+    }
+
+    .navbar-custom-menu .navbar-nav > li > a {
+        line-height: 6px;
+    }
+
+    .glyphicon-user {
+        display: block;
+    }
+
+}
+@media only screen and (min-width: 2000px) {
+    .sideBtns {
+          width: 22%;
+          margin: 5%;
+      }
+}

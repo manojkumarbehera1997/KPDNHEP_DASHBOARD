@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Configuration";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="~/js/Dashboard/jquery.min.js"></script>
+
+
+<h2>Settings</h2>
+<ul class="list-unstyled components mb-5">  
+        <li style="background-color:black"><a style="color:white" href=""><i class="fa fa-user-circle"  aria-hidden="true"></i>&nbsp;User Can Edit Own Profile <input type="checkbox" id="showCheckoutHistory"> </a> </li>
+    </ul>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/Settings/GetEditProfileSettings",
+                success: function (data) {
+                    console.log(data);
+                    $("#showCheckoutHistory").attr("checked", data);
+
+                }
+            });
+            $('#showCheckoutHistory').change(function () {
+
+                var ischecked = $(this).is(':checked');
+                var model = { Settings: ischecked };
+                
+                $.post("/Settings/SetEditProfileSettings", model, function (res) {
+                    
+                });
+
+
+            });
+
+        });
+    </script>

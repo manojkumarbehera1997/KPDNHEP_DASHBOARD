@@ -1,0 +1,53 @@
+﻿@model KPDNHEP.Console.Services.Models.UserAuthentication
+
+
+
+@{Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: transparent;
+        width: 70%;
+    }
+</style>
+
+<script src="~/js/Dashboard/jquery.min.js"></script>
+
+
+<hr />
+<div class="container login-form">
+
+    <div class="card">
+        <form asp-action="CustomAuthentication">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <span class="fa fa-user"></span>
+                        </span>
+                    </div>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                    <input asp-for="Password"  type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <button id="login_btn" type="submit" class="btn btn-primary btn-icon mt-2">
+                <span class="btn-inner--icon"><i class="fa fa-sign-in"></i></span>
+                <span class="btn-inner--text">Login</span>
+            </button>
+        </form>
+    </div>
+</div>

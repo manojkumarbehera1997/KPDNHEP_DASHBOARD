@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Newtonsoft.Json;
+
+@inject IViewLocalizer Localizer
+  
+@if (User.Identity.IsAuthenticated)
+ {
+    Context.Response.Redirect("/Application/UserApplications");
+ }
+else
+{
+    <main class="mt-3 container" id="loginSection">
+        <div class="row">      
+            
+            <div class="col-12">
+                <div class="card">     
+                    <div class="card-body">
+                        <h5 >KPDNHEP</h5>
+                        <p >Welcome to KPDNHEP</p>
+                        <a class="btn btn-icon btn-primary" href="/Home/Index" role="button" id="loginLink">
+                            <span class="btn-inner--icon"><i class="fa fa-sign-in"></i></span>
+                            <span class="btn-inner--text">@Localizer["LoginText"]</span>
+                       </a>   
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+}
+<!-- ./column -->

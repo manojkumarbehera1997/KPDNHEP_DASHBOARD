@@ -1,0 +1,36 @@
+﻿@{ Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
+
+@{ var SelectList = new List<string> { "user_name", "given_name", "family_name", "email" };
+    var claims = User.Claims.GroupBy(x => x.Type).Select(x => x.First());
+    claims = claims.Where(x => SelectList.Contains(x.Type)); }
+@if (TempData["message"] != null)
+{
+
+<script>alert('@TempData["message"]');</script>
+}
+<head>
+    <script src="~/js/Dashboard/jquery.min.js"></script>
+</head>
+
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: transparent;
+        width:70%;
+    }
+  
+</style>
+<div class="container">
+   
+                @foreach (var claim in claims)
+                 {
+                  
+                     <div class="card">
+                                <p>@claim.Type</p>
+                                <h4>@claim.Value</h4>
+                     </div>
+                     
+                 }                    
+</div>
+

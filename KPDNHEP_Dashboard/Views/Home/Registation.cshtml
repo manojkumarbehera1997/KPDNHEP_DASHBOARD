@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Registation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-5">
+
+        <div class="card shadow">
+            <div class="card-header bg-white"><strong>Step 1: </strong>Start your registration</div>
+            <div class="card-body bg-lighter">
+                <form>
+                    <div class="form-group focused">
+                        <label for="ddl-cc">Select Country</label>
+                        <select id="ddl-cc" class="form-control dark-outline">
+                            <option data-cc="UK" value="1" selected="">(+1) USA </option>
+                            <option data-cc="ZA" value="27">(+27) South Africa </option>
+                            <optgroup label="Other Countries">
+                                <option data-cc="UK" value="44">(+44) UK </option>
+                                <option data-cc="IND" value="91">(+91) India </option>
+                                <option data-cc="IND" value="91">(+91) India </option>
+                                <option data-cc="GR" value="30">(+30) Greece </option>
+                                <option data-cc="UAE" value="971">(+971) UAE </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="txt-phone">Provide your phone number</label>
+                        <input type="text" class="form-control dark-outline" id="txt-phone" placeholder="9822553400">
+                        <small class="form-text text-muted">Must be able receive texts and download app</small>
+                    </div>
+                    <button type="button" id="btn-register" class="btn btn-primary">
+                        Register
+                    </button>
+                </form>
+
+                <div style="display:none" id="panel-progress">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                            <span class="sr-only">45% Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>Step 2:</strong> Wait for a text message link to begin registration.
+                </li>
+                <li class="list-group-item">
+                    <span id="pre-success-notify"><strong>Step 3:</strong> Click on the link and follow the instructions to complete registration.</span>
+                    <span id="post-success-notify" style="display:none;"></span>
+                </li>
+            </ul>
+        </div>
+    </div>

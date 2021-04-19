@@ -1,0 +1,49 @@
+﻿@model KPDNHEP.Console.Services.ViewModels.ApplicationsView
+
+@{
+    ViewData["Title"] = "AddApplication";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<h3>Add Application</h3>
+
+<script src="~/js/Dashboard/jquery.min.js"></script>
+<style>
+    .card {
+        margin-top: 10px;
+        margin-left:10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        background-color: transparent;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-4 card">
+        <form asp-action="AddApplication" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ApplicationName" class="control-label"></label>
+                <input asp-for="ApplicationName" class="form-control" />
+                <span asp-validation-for="ApplicationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationIconFile" class="control-label"></label>
+                <input asp-for="ApplicationIconFile" class="form-control" />
+                <span asp-validation-for="ApplicationIconFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUrl" class="control-label"></label>
+                <input asp-for="ApplicationUrl" class="form-control" />
+                <span asp-validation-for="ApplicationUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationDescription" class="control-label"></label>
+                <input asp-for="ApplicationDescription" class="form-control" />
+                <span asp-validation-for="ApplicationDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

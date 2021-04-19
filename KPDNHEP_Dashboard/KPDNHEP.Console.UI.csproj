@@ -1,0 +1,205 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\Dashboard\AccountController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\dashboard\css\.DS_Store" />
+    <None Include="wwwroot\dashboard\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\dashboard\css\bootstrap\mixins\.DS_Store" />
+    <None Include="wwwroot\dashboard\js\.DS_Store" />
+    <None Include="wwwroot\bootstrap.min.js" />
+    <None Include="wwwroot\jquery.min.js" />
+    <None Include="wwwroot\main.js" />
+    <None Include="wwwroot\popper.js" />
+    <None Include="wwwroot\dashboard\scss\.DS_Store" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\.DS_Store" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\bootstrap-grid.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\bootstrap-reboot.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\bootstrap.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_alert.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_background-variant.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_badge.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_border-radius.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_box-shadow.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_breakpoints.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_buttons.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_caret.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_clearfix.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_deprecate.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_float.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_forms.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_gradients.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_grid-framework.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_grid.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_hover.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_image.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_list-group.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_lists.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_nav-divider.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_pagination.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_reset-text.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_resize.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_screen-reader.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_size.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_table-row.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_text-hide.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_text-truncate.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_transition.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\mixins\_visibility.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_align.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_background.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_borders.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_clearfix.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_display.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_embed.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_flex.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_float.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_overflow.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_position.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_screenreaders.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_shadows.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_sizing.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_spacing.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_stretched-link.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_text.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\utilities\_visibility.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\vendor\_rfs.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_alert.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_badge.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_breadcrumb.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_button-group.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_buttons.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_card.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_carousel.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_close.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_code.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_custom-forms.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_dropdown.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_forms.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_functions.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_grid.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_images.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_input-group.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_jumbotron.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_list-group.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_media.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_mixins.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_modal.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_nav.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_navbar.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_pagination.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_popover.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_print.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_progress.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_reboot.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_root.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_spinners.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_tables.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_toasts.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_tooltip.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_transitions.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_type.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_utilities.scss" />
+    <None Include="wwwroot\dashboard\scss\bootstrap\_variables.scss" />
+    <None Include="wwwroot\dashboard\scss\style.scss" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AjaxControlToolkit" Version="19.1.0" />
+    <PackageReference Include="bootstrap" Version="4.6.0" />
+    <PackageReference Include="Consul" Version="1.6.1.1" />
+    <PackageReference Include="IdentityModel" Version="3.9.0" />
+    <PackageReference Include="jose-jwt" Version="3.1.0" />
+    <PackageReference Include="JwtCore" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="NLog" Version="4.7.8" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Resource.designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Shared\_LayoutCustom.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resource.el.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resource.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Value\" />
+    <Folder Include="wwwroot\fonts\" />
+    <Folder Include="wwwroot\images\Application\" />
+    <Folder Include="wwwroot\log\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KPDNHEP.Console.Services\KPDNHEP.Console.Services.csproj" />
+  </ItemGroup>
+</Project>
+

@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+        <div class="card">
+            <div class="card-body">
+                <form role="form" asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                    <h6 class="h6 mb-4 text-black-50">Enter your credentials</h6>
+                    <div class="form-group mb-3">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Username" name="username" id="username" type="text" autofocus="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Password" type="password" name="password" id="password">
+                        </div>
+                        <p class="text-right"><small><a href="#">Forgot Password</a></small></p>
+                    </div>
+                    <button id="login_btn" type="submit" class="btn btn-primary btn-icon mt-2">
+                        <span class="btn-inner--icon"><i class="fa fa-sign-in"></i></span>
+                        <span class="btn-inner--text">Sign in</span>
+                    </button>
+                    @*<input type="hidden" name="origin" value="https://app9-oidc-stage.icrypto.com/cauthn-page?tx=9701dc91-31c7-4606-907e-9b6404c0b95c&amp;auth=eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJAITFERTQuMDAxQy4wMDAxLjAwMDEhMDAwMSEwMDAwLjAwMDEhMDAwOCE0RUJFLjM1N0UuOUExRS5BNEI2IiwiYXVkIjoiaHR0cHM6XC9cL3NpZGFzLW9pZGMtc3RhZ2UuaWNyeXB0by5jb20iLCJ0eCI6ImNjNzE2Zjk5YWQxYzE4MGQ0NDhmZTY2ZjQ3Mzg1ZGY1MzNmYmY2YmM0YzYxMDQyMGE4NGMzMzViM2Q0OTIzNWYiLCJzZXNzaW9uIjoiMGU5ZmM3NmMtNDU5Ni00NDk0LWE4NDQtMmVlYmEzMzQ1MWUxIiwiYXV0aG9yaXR5IjoiaHR0cHM6XC9cL3NpZGFzLW9pZGMtc3RhZ2UuaWNyeXB0by5jb20iLCJpc3MiOiJodHRwczpcL1wvb2lkYy1zdGFnZS5pY3J5cHRvLmNvbSIsImV4cCI6MTU5OTA1MDAxMSwiaWF0IjoxNTk5MDQ5NzExLCJyZWRpcmVjdF91cmwiOiJodHRwczpcL1wvb2lkYy1zdGFnZS5pY3J5cHRvLmNvbVwvb2lkY1wvcG9zdGxvZ2luLmh0bSJ9.Yacs7bvdotyPf8GHd7J5jUgAnLlAtKKhLn8PjrXMW2qUTS5BIFEUt42nofyIBjmJFzqurjLoCP97Ddkdvu3952pizApcw1MajzThsdgJzOmKpoad5m4JR5wDliyHp7JIHUBDTLLpGPTgwlH3ghDPW37KRvFLfIqpe2Kg85SVrDU&amp;ui_locales=eyJtZXRob2QiOiAicGFyYW0iLCAibG9jYWxlcyI6IFsiZW4iXSwgImRlZmF1bHQiOiAiZW4ifQ%3D%3D&amp;tai=eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJAITFERTQuMDAxQy4wMDAxLjAwMDEhMDAwMSEwMDAwLjAwMDEhMDAwOCE0RUJFLjM1N0UuOUExRS5BNEI2IiwiYXVkIjoiaHR0cHM6XC9cL3NpZGFzLW9pZGMtc3RhZ2UuaWNyeXB0by5jb20iLCJ0eCI6ImNjNzE2Zjk5YWQxYzE4MGQ0NDhmZTY2ZjQ3Mzg1ZGY1MzNmYmY2YmM0YzYxMDQyMGE4NGMzMzViM2Q0OTIzNWYiLCJzZXNzaW9uIjoiMGU5ZmM3NmMtNDU5Ni00NDk0LWE4NDQtMmVlYmEzMzQ1MWUxIiwiYXV0aG9yaXR5IjoiaHR0cHM6XC9cL3NpZGFzLW9pZGMtc3RhZ2UuaWNyeXB0by5jb20iLCJpc3MiOiJodHRwczpcL1wvb2lkYy1zdGFnZS5pY3J5cHRvLmNvbSIsImV4cCI6MTU5OTA1MDAxMSwiaWF0IjoxNTk5MDQ5NzExLCJyZWRpcmVjdF91cmwiOiJodHRwczpcL1wvb2lkYy1zdGFnZS5pY3J5cHRvLmNvbVwvb2lkY1wvcG9zdGxvZ2luLmh0bSJ9.Yacs7bvdotyPf8GHd7J5jUgAnLlAtKKhLn8PjrXMW2qUTS5BIFEUt42nofyIBjmJFzqurjLoCP97Ddkdvu3952pizApcw1MajzThsdgJzOmKpoad5m4JR5wDliyHp7JIHUBDTLLpGPTgwlH3ghDPW37KRvFLfIqpe2Kg85SVrDU"><input type="hidden" name="secret" value="yrcct23v1bq48vkjbxeas6etfbq0mych"><input type="hidden" name="aid" value="yrcct23v1bq48vkjbxeas6etfbq0mych"><input type="hidden" name="auth" value="eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJAITFERTQuMDAxQy4wMDAxLjAwMDEhMDAwMSEwMDAwLjAwMDEhMDAwOCE0RUJFLjM1N0UuOUExRS5BNEI2IiwiYXVkIjoiaHR0cHM6XC9cL3NpZGFzLW9pZGMtc3RhZ2UuaWNyeXB0by5jb20iLCJ0eCI6ImNjNzE2Zjk5YWQxYzE4MGQ0NDhmZTY2ZjQ3Mzg1ZGY1MzNmYmY2YmM0YzYxMDQyMGE4NGMzMzViM2Q0OTIzNWYiLCJzZXNzaW9uIjoiMGU5ZmM3NmMtNDU5Ni00NDk0LWE4NDQtMmVlYmEzMzQ1MWUxIiwiYXV0aG9yaXR5IjoiaHR0cHM6XC9cL3NpZGFzLW9pZGMtc3RhZ2UuaWNyeXB0by5jb20iLCJpc3MiOiJodHRwczpcL1wvb2lkYy1zdGFnZS5pY3J5cHRvLmNvbSIsImV4cCI6MTU5OTA1MDAxMSwiaWF0IjoxNTk5MDQ5NzExLCJyZWRpcmVjdF91cmwiOiJodHRwczpcL1wvb2lkYy1zdGFnZS5pY3J5cHRvLmNvbVwvb2lkY1wvcG9zdGxvZ2luLmh0bSJ9.Yacs7bvdotyPf8GHd7J5jUgAnLlAtKKhLn8PjrXMW2qUTS5BIFEUt42nofyIBjmJFzqurjLoCP97Ddkdvu3952pizApcw1MajzThsdgJzOmKpoad5m4JR5wDliyHp7JIHUBDTLLpGPTgwlH3ghDPW37KRvFLfIqpe2Kg85SVrDU"><input type="hidden" name="tx" value="9701dc91-31c7-4606-907e-9b6404c0b95c"><input type="hidden" name="ui_locales" value="eyJtZXRob2QiOiAicGFyYW0iLCAibG9jYWxlcyI6IFsiZW4iXSwgImRlZmF1bHQiOiAiZW4ifQ=="><input type="hidden" name="selected_lang" value="en"><input type="hidden" name="session_id" value="0e9fc76c-4596-4494-a844-2eeba33451e1">*@
+                </form>
+                <button id="show_form" class="btn btn-icon btn-primary" style="display: none;">
+                    <span class="btn-inner--icon"><i class="fa fa-sign-in"></i></span>
+                    <span class="btn-inner--text">Sign in</span>
+                </button>
+
+                <div class="or"><span>OR</span></div>
+
+                <div class="text-center" id="icrypto_direct_contianer">
+                    <a href="#" class="btn btn-primary bg-gradient-primary" id="btn-login-direct">
+                        Login with <img src="~/images/icrypto-logo-white.png" alt="iCrypto" style="height: 23px;margin-top: -5px;"> Direct
+                    </a>
+                    <div id="icrypto-web-direct"></div>
+                    <div id="icrypto-web-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-3" id="register_container">
+            <div class="card-body">
+                <div class="text-muted mb-3">
+                    <small>Do not have an account yet?</small>
+                </div>
+                <a class="btn btn-icon btn-3 btn-primary" href="/Home/Registation">
+                    <span class="btn-inner--icon"><i class="fa fa-user-plus"></i></span>
+                    <span class="btn-inner--text">Register</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+

@@ -1,0 +1,48 @@
+﻿body {
+    padding-top:unset;
+    overflow-x: hidden;
+}
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #008bcd;
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: #ffffff;
+    font-size: large;
+}
+
+.navbar-header-with-bg {
+    background: url('https://www.wind.gr/files/1/MYWIND/registerPromo_new.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 360px;
+}
+
+.navbar {
+    background-color: #3b3f40;
+    min-height: 20px;
+    z-index: -1;
+}
+
+.sidenav p, .sidenav p a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #57c9ff;
+    display: block;
+}
+
+    .sidenav p a:hover {
+        color: #57c9ff;
+    }
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}

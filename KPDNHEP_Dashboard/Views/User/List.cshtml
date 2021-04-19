@@ -1,0 +1,70 @@
+﻿@model IEnumerable<KPDNHEP.Console.Services.Models.Users>
+
+@{ Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
+@{ ViewBag.Title = "Index"; }
+@if (TempData["message"] != null)
+{
+    <script>alert('@TempData["message"]');</script>
+}
+
+<script src="~/js/Dashboard/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="~/js/Dashboard/adminlte.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<table id="userTable" class="table table-bordered">
+    <thead>
+        <tr class="success">
+            <th>
+                User Name
+            </th>
+            <th>
+                Family Name
+            </th>
+            <th>
+                Given Name
+            </th>
+            <th>
+                Display Name
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            foreach (var childitem in item.Resources)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => childitem.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => childitem.Name.FamilyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => childitem.Name.GivenName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => childitem.DisplayName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Assign Application", "AssignToUser", new { username = childitem.UserName })
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#userTable').DataTable();
+    });
+</script> 

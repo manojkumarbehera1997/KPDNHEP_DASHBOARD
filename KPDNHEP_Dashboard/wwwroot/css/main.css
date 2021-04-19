@@ -1,0 +1,50 @@
+.navbar {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.bg-gradient-mybank {
+    background: -webkit-linear-gradient(50deg,#45cafc,#303f9f) !important;
+    background: -o-linear-gradient(50deg,#45cafc,#303f9f) !important;
+    background: linear-gradient(40deg,#e5e6ed,#ffffff) !important;
+}
+
+.bg-gradient-icrypto {
+    background: -webkit-linear-gradient(50deg,#2e495f,#558da4) !important;
+    background: -o-linear-gradient(50deg,#2e495f,#558da4) !important;
+    background: linear-gradient(40deg, #2e495f,#558da4) !important;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+.or > span {
+    background-color: #172b4d;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.3rem;
+}
+
+.or:after,
+.or:before {
+    content: "";
+    display: block;
+    background: #172b4d;
+    width: 100%;
+    height:1px;
+    margin: 0 10px;
+}
+
+iframe {
+    display: none;
+}

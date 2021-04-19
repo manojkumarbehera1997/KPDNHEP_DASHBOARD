@@ -1,0 +1,180 @@
+﻿@{ var name = "";
+    var userPermission = "";
+    var giveNname = "";
+    var email = ""; }
+@{
+    name = User.Claims.Where(p => p.Type == "name").Select(o => o.Value).FirstOrDefault();
+    userPermission = User.Claims.Where(p => p.Type == "roles").Select(o => o.Value).FirstOrDefault();
+    giveNname = User.Claims.Where(p => p.Type == "given_name").Select(o => o.Value).FirstOrDefault();
+    email = User.Claims.Where(p => p.Type == "email").Select(o => o.Value).FirstOrDefault();
+}
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W2NTF3');</script>
+    <!-- End Google Tag Manager -->
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/dashboard/css/style.css" rel="stylesheet" />
+    <link href="~/dashboard/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<header >
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#"></a>
+    </nav>
+</header>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="wrapper d-flex align-items-stretch" style="margin-top:0px">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center py-4" @*style="background-image: url(images/bg_1.jpg);"*@>
+                <div class="user-logo">
+                    <div class="img"><img class="logoTxtImg img" src="~/images/logo.png" alt="kpdnhep"></div>
+                    <h3>@giveNname</h3>
+                </div>
+            </div>
+
+            @if (userPermission == "user")
+            {
+        <ul class="list-unstyled components mb-5">
+
+            <li class="active">
+            <li><a href="/Application/UserApplications"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/User/Profile"><i class="fa fa-user" aria-hidden="true"></i> View Profile </a></li>
+            <li id="list"><a href="/User/UpdateProfile"><i class="fa fa-edit" aria-hidden="true"></i> Edit Profile </a></li>
+            <li><a href="/UserGroup/ApplicationGroup"><i class="fa fa-buysellads" aria-hidden="true"></i> Groups </a></li>
+            <li>
+                <a href="/User/ChangePassword"><i class="fa fa-shield" aria-hidden="true"></i> Change Password </a>
+            </li>
+            <li><a href="/Home/Logout"><span class="fa fa-sign-out"></span>&nbsp;Logout</a>            
+            </li>
+        </ul>
+            }
+            else if (userPermission == "admin")
+            {
+
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+            <li><a href="/User/List/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/Settings/EditProfileSettings"><i class="fa fa-wrench" aria-hidden="true"></i> Configuration</a> </li>                                        
+            <li><a href="/Application/UserApplications"><i class="fa fa-eye" aria-hidden="true"></i> View All</a></li>
+            <li><a href="/Application/AddApplication"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Application</a></li>
+            <li><a href="/Home/Logout"><span class="fa fa-sign-out"></span>&nbsp;Logout</a></li>          
+        </ul>
+            }
+   
+    </nav>
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
+        </div>
+    </div>
+}
+
+
+<body class="skin-purple sidebar-mini" style="height: auto; min-height: 100%;">
+    @*<div id="content" class="p-4 p-md-5 pt-5">
+        @RenderBody()
+    </div>*@
+    <div style="margin-left: 17%;margin-top:10px;margin-right:5px;">
+      
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Settings/GetEditProfileSettings",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    if (data == true) {
+                        $("#showCheckoutHistory").prop("checked", true);
+                        $('#list').show();
+                    }
+                    else
+                        $('#list').hide();
+                }
+            });
+            (function ($) {
+
+                "use strict";
+
+                var fullHeight = function () {
+
+                    $('.js-fullheight').css('height', $(window).height());
+                    $(window).resize(function () {
+                        $('.js-fullheight').css('height', $(window).height());
+                    });
+
+                };
+                fullHeight();
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+
+            })(jQuery);
+
+            $("#loginLink").on('click', function (e) {
+                e.preventDefault();
+                var currentUrl = window.location;
+                var baseUrl = currentUrl.protocol + "//" + currentUrl.host + "/" + currentUrl.pathname.split('/')[1];
+
+                if (!baseUrl.endsWith("/")) {
+                    baseUrl = baseUrl + "/";
+                }
+                var ui_locale = $('#lang :selected').val();
+
+                $.each($("#lang option"), function () {
+                    if ($('#lang :selected').val() != $(this).val()) {
+                        ui_locale = ui_locale + " " + $(this).val();
+                    }
+                });
+
+                url = currentUrl.toString();
+                if (url.match("#$")) {
+                    url = url.substring(0, url.length - 1)
+                }
+
+                if (baseUrl.includes('Home')) {
+                    window.location.href = baseUrl + "Login?returnUrl=" + url + "&ui_locales=" + ui_locale;
+                }
+                else {
+                    window.location.href = baseUrl + "Home/Login?ui_locales=" + ui_locale;
+
+                    ////Use this line if you want to go back to the same page from where login request was triggered.
+                    //window.location.href = baseUrl + "Account/Login?returnUrl=" + url + "&ui_locales=" + ui_locale;
+                }
+
+            });
+        });
+
+    </script>
+</body>
+
+
+
+
+
+

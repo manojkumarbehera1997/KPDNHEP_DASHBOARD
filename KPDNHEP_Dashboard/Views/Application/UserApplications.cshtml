@@ -1,0 +1,64 @@
+﻿@using KPDNHEP.Console.Services.ViewModels;
+
+@{ Layout = "~/Views/Shared/_DashboardLayout.cshtml"; }
+@{ ViewData["Title"] = "UserApplications"; }
+<style>
+    .zoom {
+        transition: transform .2s;
+        height: 120px;
+        width: 150px;
+       
+    }
+    .container{
+        margin-top:0;
+    }
+
+        .zoom:hover {
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(1.2);
+        }
+</style>
+<head>   
+    <script src="~/js/Dashboard/jquery.min.js"></script>     
+</head>
+<body>  
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h3>Applications</h3>
+                    @if (TempData["message"] != null)
+                    {
+                        <script>alert('@TempData["message"]');</script>
+                    }
+                    @{
+                        var myApp = ViewData["Applications"];
+                        ApplicationsView[] applications = (ApplicationsView[])myApp;
+
+                        @if (applications.Count() == 0)
+                        {
+                            <h5 style="color:white">You do not have access to any Apps</h5>
+                        }
+                        else
+                        {
+                            @foreach (var item in applications)
+                            {
+
+                                <a href="@item.ApplicationUrl">
+                                    <img class="zoom" style="height:110px;width:140px;margin-bottom: 5px;" src="~/images/dashboard/@item.ApplicationIcon" />
+                                </a>
+                            }
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+   
+</body>
+
+
+
+
+
